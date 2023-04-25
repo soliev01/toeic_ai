@@ -3,7 +3,10 @@
 //  chatgpt_v2
 //
 //  Created by Sherzod Makhmudov on 2023/04/25.
-//
+// word recomenation TOEIC related - 단어추천 ( 토익단어, 일상단어)
+// 일상 회화 ( chat with gpt in English)
+// 토익문제 (토익기출)
+// 영어 일기장 작성 및 첨삭 (+ 감정 코멘트 ex. you seem like unhappy or tired ?? )
 
 import SwiftUI
 import Combine
