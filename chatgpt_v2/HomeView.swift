@@ -16,22 +16,86 @@ struct HomeView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Text("Welcome to Chat!")
-//                NavigationLink(destination: QuizWithAI(), label:{
-//                    Text("Chat quizz")
-//                        .bold()
-//                        .frame(width: 280, height: 50)
-//                        .background(Color.blue)
-//                        .foregroundColor(.white)
-//                        .cornerRadius(40)
-//                })
+                Spacer()
+                Text("D A I L _ E")
+                    .bold()
+                    .font(.largeTitle)
+                Spacer()
                 NavigationLink(destination: ChatView(), label:{
-                    Text("Chat with AI")
-                        .bold()
+                    HStack {
+                            Image(systemName: "character.book.closed")
+                                .resizable()
+                                .frame(width: 30, height: 30)
+                                .padding(.leading)
+                            Spacer()
+                            Text("WORD")
+                                .bold()
+                                .foregroundColor(.white)
+                                .frame(width: 200, height: 50, alignment: .center) // 가운데 정렬
+                            Spacer()
+                        }
                         .frame(width: 280, height: 50)
-                        .background(Color.blue)
-                        .foregroundColor(.white)
+                        .background(Color.gray)
+                        .foregroundColor(Color.white)
                         .cornerRadius(40)
+                        .padding()
+                })
+                NavigationLink(destination: ChatView(), label:{
+                    HStack {
+                            Image(systemName: "questionmark.bubble")
+                                .resizable()
+                                .frame(width: 30, height: 30)
+                                .padding(.leading)
+                            Spacer()
+                            Text("TOEIC QUESTION")
+                                .bold()
+                                .foregroundColor(.white)
+                                .frame(width: 200, height: 50, alignment: .center) // 가운데 정렬
+                            Spacer()
+                        }
+                        .frame(width: 280, height: 50)
+                        .background(Color.gray)
+                        .foregroundColor(Color.white)
+                        .cornerRadius(40)
+                        .padding()
+                })
+                NavigationLink(destination: ChatView(), label:{
+                    HStack {
+                            Image(systemName: "text.bubble")
+                                .resizable()
+                                .frame(width: 30, height: 30)
+                                .padding(.leading)
+                            Spacer()
+                            Text("DAILY CONVERSATION")
+                                .bold()
+                                .foregroundColor(.white)
+                                .frame(width: 200, height: 50, alignment: .center) // 가운데 정렬
+                            Spacer()
+                        }
+                        .frame(width: 280, height: 50)
+                        .background(Color.gray)
+                        .foregroundColor(Color.white)
+                        .cornerRadius(40)
+                        .padding()
+                })
+                NavigationLink(destination: ChatView(), label:{
+                    HStack {
+                            Image(systemName: "square.and.pencil")
+                                .resizable()
+                                .frame(width: 30, height: 30)
+                                .padding(.leading)
+                            Spacer()
+                            Text("WRITING DIARY")
+                                .bold()
+                                .foregroundColor(.white)
+                                .frame(width: 200, height: 50, alignment: .center) // 가운데 정렬
+                            Spacer()
+                        }
+                        .frame(width: 280, height: 50)
+                        .background(Color.gray)
+                        .foregroundColor(Color.white)
+                        .cornerRadius(40)
+                        .padding()
                 })
             }
             .padding()
