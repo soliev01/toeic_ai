@@ -14,16 +14,11 @@ struct LounchScreenView: View {
     
     var body: some View {
             if isActive {
-                HomeView()
+                HomeView_v2()
             } else {
                 VStack {
                     VStack {
-                        Image(systemName: "ellipsis.message.fill")
-                            .font(.system(size: 90))
-                            .foregroundColor(.accentColor)
-                        Text("TOEIC Chat")
-                            .font(Font.custom("Baskerville-Bold", size: 36))
-                            .foregroundColor(.black.opacity(0.80))
+                        Image("logo")
                     }
                     .scaleEffect(size)
                     .opacity(opacity)
