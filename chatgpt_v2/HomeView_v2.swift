@@ -10,37 +10,35 @@ import SwiftUI
 struct HomeView_v2: View {
     var body: some View {
         NavigationView{
-            ScrollView {
-                Spacer()
-                Spacer()
-                Spacer()
-                Spacer()
-                Spacer()
-                Spacer()
                 VStack {
-                    Text("D A I L _ E")
-                        .bold()
-                        .font(.largeTitle)
+                    ForEach(0..<4) { number in
+                        Spacer()
+                    }
+                    
+                    Image("logo")
+                    
+                    ForEach(0..<2) { number in
+                        Spacer()
+                    }
+                    LazyVGrid(columns: [GridItem(),GridItem()]){
+                        NavigationLink(destination: WordView_v2()){
+                            CardView(image:"image_word", heading:"WORD", author:"단어를 공부해보세요")
+                        }
+                        NavigationLink(destination: ChatView()){
+                            CardView(image:"image_question", heading:"TOEIC", author:"GPT 추천 토익문제")
+                        }
+                        NavigationLink(destination: ChatView()){
+                            CardView(image:"image_conversation", heading:"CHAT", author:"영어로 대화 해보세요")
+                        }
+                        NavigationLink(destination: ChatView()){
+                            CardView(image:"image_diary", heading:"DIARY", author:"영어로 일기를 써보세요!")
+                        }
+                    }
                     
                     Spacer()
                     Spacer()
-                    Spacer()
-                    Spacer()
-                    Spacer()
-                    NavigationLink(destination: WordView()){
-                        CardView(image:"image_word", heading:"WORD", author:"단어를 외우고 공부해보세요")
-                    }
-                    NavigationLink(destination: ChatView()){
-                        CardView(image:"image_question", heading:"TOEIC QUESTION", author:"Chat GPT가 추천해주는 토익문제")
-                    }
-                    NavigationLink(destination: ChatView()){
-                        CardView(image:"image_conversation", heading:"DAILY CONVERSATION", author:"영어로 대화하여 영어실력을 향상시켜보세요")
-                    }
-                    NavigationLink(destination: ChatView()){
-                        CardView(image:"image_diary", heading:"WRITNG DIARY", author:"영어로 일기를 써보세요! 오늘 당신의 기분을 알려드려요")
-                    }
                 }
-            }
+            
         }
         .navigationTitle("Home")
     }
@@ -56,7 +54,7 @@ struct CardView :View {
         VStack {
             Image(image)
                 .resizable()
-                .aspectRatio(contentMode: .fill)
+                .aspectRatio(contentMode: .fit)
             
             HStack {
                 VStack(alignment: .leading) {
@@ -78,7 +76,7 @@ struct CardView :View {
         .cornerRadius(10)
         .overlay(
             RoundedRectangle(cornerRadius: 10)
-                .stroke(Color(.sRGB,red: 150/255, green: 150/255, blue: 150/255, opacity: 0.5), lineWidth: 1)
+                .stroke(Color(.sRGB,red: 150/255, green: 150/255, blue: 150/255, opacity: 0.5), lineWidth: 2)
         )
         .padding([.top, .horizontal])
     }
