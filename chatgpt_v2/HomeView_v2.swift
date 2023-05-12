@@ -30,7 +30,7 @@ struct HomeView_v2: View {
                         NavigationLink(destination: ChatView()){
                             CardView(image:"image_conversation", heading:"CHAT", author:"영어로 대화 해보세요")
                         }
-                        NavigationLink(destination: ChatView()){
+                        NavigationLink(destination: DiaryView(txt: "")){
                             CardView(image:"image_diary", heading:"DIARY", author:"영어로 일기를 써보세요!")
                         }
                     }

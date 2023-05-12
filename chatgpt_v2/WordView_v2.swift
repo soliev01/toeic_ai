@@ -12,35 +12,36 @@ var meanArray = ["학교","책","연필","사과", "책상"]
 
 struct WordView_v2: View {
     var body: some View {
-        VStack {
-            VStack(alignment: .leading){
-                Text("\t" + "Word")
-                    .bold()
-                    .font(.largeTitle)
-                Spacer()
-                ForEach(0..<wordArray.count) { number in
-                    //show word and it's meaning
-                    WordView1(word:wordArray[number], meaning:meanArray[number])
+        NavigationView{
+            VStack {
+                VStack(alignment: .leading){
+                    Text("\t" + "Word")
+                        .bold()
+                        .font(.largeTitle)
+                    Spacer()
+                    ForEach(0..<wordArray.count) { number in
+                        //show word and it's meaning
+                        WordView1(word:wordArray[number], meaning:meanArray[number])
+                    }
                 }
-            }
-            ForEach(0..<13) { number in
+                ForEach(0..<13) { number in
+                    Spacer()
+                }
+                HStack{
+                    RefreshView()
+                    NavigationLink(destination: WordTestView()){
+                        TestView()
+                    }
+                }
                 Spacer()
             }
-            HStack{
-                RefreshView()
-                TestView()
-            }
-            Spacer()
         }
     }
 }
 
 struct TestView: View{
-    
     var body: some View {
-        Button {
-            //action for refresh the words
-        } label: {
+        NavigationLink(destination: WordTestView()) {
             VStack (alignment: .leading){
                 HStack {
                     Image(systemName: "pencil")
@@ -64,6 +65,12 @@ struct TestView: View{
         }
     }
 }
+
+
+
+
+
+
 
 struct RefreshView: View{
     
