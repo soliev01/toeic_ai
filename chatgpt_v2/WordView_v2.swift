@@ -12,7 +12,6 @@ var meanArray = ["학교","책","연필","사과", "책상"]
 
 struct WordView_v2: View {
     var body: some View {
-        NavigationView{
             VStack {
                 VStack(alignment: .leading){
                     Text("\t" + "Word")
@@ -24,6 +23,7 @@ struct WordView_v2: View {
                         WordView1(word:wordArray[number], meaning:meanArray[number])
                     }
                 }
+                
                 ForEach(0..<13) { number in
                     Spacer()
                 }
@@ -32,10 +32,9 @@ struct WordView_v2: View {
                     NavigationLink(destination: WordTestView()){
                         TestView()
                     }
-                }
+                }.navigationTitle("Word")
                 Spacer()
             }
-        }
     }
 }
 
