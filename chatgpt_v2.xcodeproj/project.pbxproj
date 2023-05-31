@@ -29,6 +29,9 @@
 		7062ECB429F56DB300C3A0E0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7062ECB329F56DB300C3A0E0 /* Constants.swift */; };
 		70CD8C2529F7F7A900FB6136 /* LounchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CD8C2429F7F7A900FB6136 /* LounchScreen.swift */; };
 		70CD8C2729F7F7E700FB6136 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CD8C2629F7F7E700FB6136 /* HomeView.swift */; };
+		7DCF45502A14FC6D0050A0E8 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 7DCF454F2A14FC6D0050A0E8 /* FSCalendar */; };
+		7DCF45522A14FFFA0050A0E8 /* CalendarModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCF45512A14FFFA0050A0E8 /* CalendarModule.swift */; };
+		7DCF45542A1504AF0050A0E8 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCF45532A1504AF0050A0E8 /* CalendarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +76,8 @@
 		7062ECB329F56DB300C3A0E0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		70CD8C2429F7F7A900FB6136 /* LounchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LounchScreen.swift; sourceTree = "<group>"; };
 		70CD8C2629F7F7E700FB6136 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		7DCF45512A14FFFA0050A0E8 /* CalendarModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarModule.swift; sourceTree = "<group>"; };
+		7DCF45532A1504AF0050A0E8 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +86,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7062ECB229F56B3700C3A0E0 /* Alamofire in Frameworks */,
+				7DCF45502A14FC6D0050A0E8 /* FSCalendar in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +146,8 @@
 				7062ECAC29F5692800C3A0E0 /* ChatViewModel.swift */,
 				7062ECAE29F56ADC00C3A0E0 /* OpenAIService.swift */,
 				7062ECB329F56DB300C3A0E0 /* Constants.swift */,
+				7DCF45512A14FFFA0050A0E8 /* CalendarModule.swift */,
+				7DCF45532A1504AF0050A0E8 /* CalendarView.swift */,
 				7062EC8629F563EB00C3A0E0 /* Assets.xcassets */,
 				7062EC8829F563EB00C3A0E0 /* Preview Content */,
 			);
@@ -189,6 +197,7 @@
 			name = chatgpt_v2;
 			packageProductDependencies = (
 				7062ECB129F56B3700C3A0E0 /* Alamofire */,
+				7DCF454F2A14FC6D0050A0E8 /* FSCalendar */,
 			);
 			productName = chatgpt_v2;
 			productReference = 7062EC7F29F563E900C3A0E0 /* chatgpt_v2.app */;
@@ -264,6 +273,7 @@
 			mainGroup = 7062EC7629F563E900C3A0E0;
 			packageReferences = (
 				7062ECB029F56B3700C3A0E0 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				7DCF454E2A14FC6D0050A0E8 /* XCRemoteSwiftPackageReference "FSCalendar" */,
 			);
 			productRefGroup = 7062EC8029F563E900C3A0E0 /* Products */;
 			projectDirPath = "";
@@ -320,6 +330,8 @@
 				7062EC8329F563E900C3A0E0 /* chatgpt_v2App.swift in Sources */,
 				70CD8C2529F7F7A900FB6136 /* LounchScreen.swift in Sources */,
 				49A658AD2A0DEA0800F3863F /* WordView.swift in Sources */,
+				7DCF45522A14FFFA0050A0E8 /* CalendarModule.swift in Sources */,
+				7DCF45542A1504AF0050A0E8 /* CalendarView.swift in Sources */,
 				7062ECAF29F56ADC00C3A0E0 /* OpenAIService.swift in Sources */,
 				49A658AB2A0DEA0800F3863F /* DiaryView.swift in Sources */,
 				49A658AA2A0DEA0800F3863F /* HomeView_v2.swift in Sources */,
@@ -657,6 +669,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		7DCF454E2A14FC6D0050A0E8 /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/WenchaoD/FSCalendar";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -664,6 +684,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7062ECB029F56B3700C3A0E0 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		7DCF454F2A14FC6D0050A0E8 /* FSCalendar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7DCF454E2A14FC6D0050A0E8 /* XCRemoteSwiftPackageReference "FSCalendar" */;
+			productName = FSCalendar;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

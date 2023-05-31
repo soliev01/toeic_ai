@@ -9,13 +9,16 @@ import SwiftUI
 
 struct DiaryView: View{
     @State var txt: String
-    var body: some View
+    @Binding var selectedDate: Date?
+    
+        var body: some View
     {
         NavigationView()
         {
             VStack(alignment: .center)
             {
                 //1.제목 : Let's try write your diary
+                
                 Text("Let's try write your diary!")
                     .font(.title2)
                 //2.글상자
@@ -23,10 +26,11 @@ struct DiaryView: View{
                     //1.Hstack(Date, Place)
                     HStack{
                         //1. Date with calendar api
-                        Button("Date")
-                        {
-                            
-                        }
+//                        Button("Date")
+//                        {
+//
+//                        }
+                        Text(selectedDate?.formatted(date: .numeric, time: .omitted) ?? "_")
                         Spacer()
                         //2. Place with map with api?
                         Button("Place")
@@ -74,10 +78,11 @@ struct DiaryView: View{
     
 }
 
-struct DiaryView_Previews: PreviewProvider {
-    static var previews: some View {
-        DiaryView(txt: "")
-    }
-}
+//struct DiaryView_Previews: PreviewProvider {
+////    @Binding var selectedDate: Date?
+//    static var previews: some View {
+//        DiaryView(txt: "", selectedDate: nil)
+//    }
+//}
 
 

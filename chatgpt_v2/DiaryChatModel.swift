@@ -10,34 +10,40 @@ import Foundation
 extension DiaryChatView{
     class DiaryModel: ObservableObject{
         @Published var diary_input: String = ""
-        @Published var diary_msgs: [Message] = [Message(id: "First message", role: .user, content: "Please give me the appropriate comment according to my feelings.", createAt: Date())]
+        @Published var diary_msgs: [Message] = []
         @Published var command_feeling: String = ""
         @Published var diary_current_msg:String = ""
         private let openAIService = OpenAIService()
         init(input:String)
         {
             self.diary_input = input
-            self.sendMessage()
+            self.sendFirstMesseage()
+        }
+        
+        func sendFirstMesseage()
+        {
+            command_feeling = "Please give me the appropriate comment according to my feelings. "
+            command_feeling.append(diary_input)
+            let feelingmsg = Message(id: UUID().uuidString, role: .user, content: command_feeling, createAt: Date())
+            var temp_first_msg: [Message] = []
+            temp_first_msg.append(feelingmsg)
+            diary_input = ""
+            sendStreamMsg(meslist: temp_first_msg)
+            
         }
         func sendMessage(){
-            command_feeling = "Please give me the appropriate comment according to my feelings."
+            command_feeling = ""
             command_feeling.append(diary_input)
             let feelingmsg = Message(id: UUID().uuidString, role: .user, content: command_feeling, createAt: Date())
             diary_msgs.append(feelingmsg)
             diary_input = ""
+            sendStreamMsg(meslist: diary_msgs)
             
-//            Task{
-//                let response = await openAIService.sendMessage(messages: messages)
-//                guard let receivedOpenAIMessage = response?.choices.first?.message else {
-//                    print("Message not received yet")
-//                    return
-//                }
-//                let receivedMessage = Message(id: UUID(), role: receivedOpenAIMessage.role, content: receivedOpenAIMessage.content, createAt: Date())
-//                await MainActor.run {
-//                    messages.append(receivedMessage)
-//                }
-//            }
-            openAIService.sendStreamMessage(messages: diary_msgs).responseStreamString {[weak self] stream in
+        }
+        
+        func sendStreamMsg(meslist: [Message])
+        {
+            openAIService.sendStreamMessage(messages: meslist).responseStreamString {[weak self] stream in
                 guard let self = self else { return }
                 switch stream.event{
                 case .stream(let response):
