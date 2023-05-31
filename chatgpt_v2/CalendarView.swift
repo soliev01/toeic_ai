@@ -12,24 +12,22 @@ struct CalendarView: View {
     @State private var showDiaryView = false
     
     var body: some View {
-        NavigationView {
+        VStack {
             VStack {
-                VStack {
-                    Spacer()
-                    CalendarModuleView(selectedDate: $selectedDate)
-//                        .onChange(of: selectedDate, perform: { newDate in
-//                            handleSelectedDate(newDate)
-//                        })
-                    Spacer()
-                }
-                VStack {
-                    Spacer()
-                    DiaryStatus()
-                    Spacer()
-                }
+                Spacer()
+                CalendarModuleView(selectedDate: $selectedDate)
+    //                        .onChange(of: selectedDate, perform: { newDate in
+    //                            handleSelectedDate(newDate)
+    //                        })
+                Spacer()
             }
-            .navigationBarTitle(Text("Calendar"), displayMode: .inline)
+            VStack {
+                Spacer()
+                DiaryStatus()
+                Spacer()
+            }
         }
+        .navigationBarTitle(Text("Calendar"), displayMode: .inline)
     }
     
 //    func handleSelectedDate(_ newDate: Date?) {
