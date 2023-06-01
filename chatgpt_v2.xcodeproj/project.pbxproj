@@ -16,6 +16,7 @@
 		49A658AC2A0DEA0800F3863F /* WordView_v2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A658A42A0DEA0800F3863F /* WordView_v2.swift */; };
 		49A658AD2A0DEA0800F3863F /* WordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A658A52A0DEA0800F3863F /* WordView.swift */; };
 		49A658AF2A0DEAB700F3863F /* WordTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A658AE2A0DEAB700F3863F /* WordTestView.swift */; };
+		49DCCDA42A28B49A005C9B58 /* ToeicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DCCDA32A28B49A005C9B58 /* ToeicView.swift */; };
 		7062EC8329F563E900C3A0E0 /* chatgpt_v2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7062EC8229F563E900C3A0E0 /* chatgpt_v2App.swift */; };
 		7062EC8529F563E900C3A0E0 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7062EC8429F563E900C3A0E0 /* ChatView.swift */; };
 		7062EC8729F563EB00C3A0E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7062EC8629F563EB00C3A0E0 /* Assets.xcassets */; };
@@ -61,6 +62,7 @@
 		49A658A42A0DEA0800F3863F /* WordView_v2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordView_v2.swift; sourceTree = "<group>"; };
 		49A658A52A0DEA0800F3863F /* WordView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordView.swift; sourceTree = "<group>"; };
 		49A658AE2A0DEAB700F3863F /* WordTestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordTestView.swift; sourceTree = "<group>"; };
+		49DCCDA32A28B49A005C9B58 /* ToeicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToeicView.swift; sourceTree = "<group>"; };
 		7062EC7F29F563E900C3A0E0 /* chatgpt_v2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chatgpt_v2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7062EC8229F563E900C3A0E0 /* chatgpt_v2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chatgpt_v2App.swift; sourceTree = "<group>"; };
 		7062EC8429F563E900C3A0E0 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				7DCF45532A1504AF0050A0E8 /* CalendarView.swift */,
 				7062EC8629F563EB00C3A0E0 /* Assets.xcassets */,
 				7062EC8829F563EB00C3A0E0 /* Preview Content */,
+				49DCCDA32A28B49A005C9B58 /* ToeicView.swift */,
 			);
 			path = chatgpt_v2;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 				7DCF45522A14FFFA0050A0E8 /* CalendarModule.swift in Sources */,
 				7DCF45542A1504AF0050A0E8 /* CalendarView.swift in Sources */,
 				7062ECAF29F56ADC00C3A0E0 /* OpenAIService.swift in Sources */,
+				49DCCDA42A28B49A005C9B58 /* ToeicView.swift in Sources */,
 				49A658AB2A0DEA0800F3863F /* DiaryView.swift in Sources */,
 				49A658AA2A0DEA0800F3863F /* HomeView_v2.swift in Sources */,
 			);

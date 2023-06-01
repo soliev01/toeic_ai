@@ -24,7 +24,7 @@ struct HomeView_v2: View {
                         NavigationLink(destination: WordView_v2()){
                             CardView(image:"image_word", heading:"WORD", author:"단어를 공부해보세요")
                         }
-                        NavigationLink(destination: ChatView()){
+                        NavigationLink(destination: ToeicView()){
                             CardView(image:"image_question", heading:"TOEIC", author:"GPT 추천 토익문제")
                         }
                         NavigationLink(destination: ChatView()){
