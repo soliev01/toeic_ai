@@ -75,7 +75,7 @@ extension ToeicView{
 
 extension ChatView{
     class ViewModel: ObservableObject{
-        @Published var messages: [Message] = [Message(id: "First message", role: .user, content: "You are English assistent. You will help to get high score in TOEIC examine. You will generate puzzle game related to English words and grammars. Aspecially for Korean people", createAt: Date())]
+        @Published var messages: [Message] = [Message(id: "First message", role: .system, content: "You are an English teacher. You are going to help learners to get high score in TOEIC exam. We are making a quizz game based on common English words and grammar. Learners are Korean.", createAt: Date())]
         @Published var currentInput: String = ""
         
         private let openAIService = OpenAIService()

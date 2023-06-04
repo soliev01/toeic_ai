@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ChatView: View {
     @ObservedObject var viewModel = ViewModel()
+    // used for systeme theme mode
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         VStack {
@@ -34,7 +36,7 @@ struct ChatView: View {
         HStack {
             if message.role == .user {Spacer()}
             Text(message.content)
-                .foregroundColor(message.role == .user ? .white: .black)
+                .foregroundColor(message.role == .user ? .white: colorScheme == .dark ? .white: .black)
                 .padding()
                 .background(message.role == .user ? Color.blue: Color.gray.opacity(0.2))
                 .cornerRadius(20)

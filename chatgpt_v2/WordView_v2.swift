@@ -12,37 +12,42 @@ import SwiftUI
 
 struct WordView_v2: View {
     @ObservedObject var model = AppModel()
-
     var body: some View {
         VStack {
             VStack(alignment: .leading){
-                Text("\t" + "Word")
+                Text("\t" + "Words")
                     .bold()
                     .font(.largeTitle)
                 Spacer()
-                ForEach(model.wordArray.indices, id: \.self) { index in
-                    if let word = model.wordArray[index], let meaning = model.meanArray[index] {
-                        WordView1(word: word, meaning: meaning)
+                    ForEach(model.wordMap.keys.sorted(), id: \.self) { index in
+                        WordView1(word: index, meaning: model.wordMap[index] ?? "안돼!")
                     }
-                }
+                
+             
+//                ForEach(model.wordArray.indices, id: \.self) { index in
+//                    if let word = model.wordArray[index], let meaning = model.meanArray[index] {
+//                        WordView1(word: word, meaning: meaning)
+//                    }
+//                }
 //                ForEach(0..<wordArray.count) { number in
 //                    //show word and it's meaning
 //                    WordView1(word:wordArray[number], meaning:meanArray[number])
 //                }
             }
-            ForEach(0..<13) { number in
-                Spacer()
-            }
+   
             HStack{
-                RefreshView()
-                TestView()
+                RefreshButton()
+                TestButton()
             }
             Spacer()
         }
+       
     }
+   
 }
 
-struct TestView: View{
+
+struct TestButton: View{
 
     var body: some View {
         Button {
@@ -72,7 +77,7 @@ struct TestView: View{
     }
 }
 
-struct RefreshView: View{
+struct RefreshButton: View{
     @ObservedObject var model = AppModel()
 
     var body: some View {
@@ -99,7 +104,9 @@ struct RefreshView: View{
             )
             .padding([.top, .horizontal])
         }
+        .onAppear(perform: model.initPrompt)
     }
+       
 }
 
 struct WordView1: View{
