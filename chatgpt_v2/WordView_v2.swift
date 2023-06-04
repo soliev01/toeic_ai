@@ -7,40 +7,47 @@
 
 import SwiftUI
 
-var wordArray = ["school","book","pencil", "apple", "desk"]
-var meanArray = ["학교","책","연필","사과", "책상"]
+//var wordArray = ["school","book","pencil", "apple", "desk"]
+//var meanArray = ["학교","책","연필","사과", "책상"]
 
 struct WordView_v2: View {
+    @ObservedObject var model = AppModel()
+
     var body: some View {
-            VStack {
-                VStack(alignment: .leading){
-                    Text("\t" + "Word")
-                        .bold()
-                        .font(.largeTitle)
-                    Spacer()
-                    ForEach(0..<wordArray.count) { number in
-                        //show word and it's meaning
-                        WordView1(word:wordArray[number], meaning:meanArray[number])
+        VStack {
+            VStack(alignment: .leading){
+                Text("\t" + "Word")
+                    .bold()
+                    .font(.largeTitle)
+                Spacer()
+                ForEach(model.wordArray.indices, id: \.self) { index in
+                    if let word = model.wordArray[index], let meaning = model.meanArray[index] {
+                        WordView1(word: word, meaning: meaning)
                     }
                 }
-                
-                ForEach(0..<13) { number in
-                    Spacer()
-                }
-                HStack{
-                    RefreshView()
-                    NavigationLink(destination: WordTestView()){
-                        TestView()
-                    }
-                }.navigationTitle("Word")
+//                ForEach(0..<wordArray.count) { number in
+//                    //show word and it's meaning
+//                    WordView1(word:wordArray[number], meaning:meanArray[number])
+//                }
+            }
+            ForEach(0..<13) { number in
                 Spacer()
             }
+            HStack{
+                RefreshView()
+                TestView()
+            }
+            Spacer()
+        }
     }
 }
 
 struct TestView: View{
+
     var body: some View {
-        NavigationLink(destination: WordTestView()) {
+        Button {
+            //action for refresh the words
+        } label: {
             VStack (alignment: .leading){
                 HStack {
                     Image(systemName: "pencil")
@@ -65,17 +72,12 @@ struct TestView: View{
     }
 }
 
-
-
-
-
-
-
 struct RefreshView: View{
-    
+    @ObservedObject var model = AppModel()
+
     var body: some View {
         Button {
-            //action for refresh the words
+            model.makeWords()
         } label: {
             VStack (alignment: .leading){
                 HStack {
@@ -103,7 +105,7 @@ struct RefreshView: View{
 struct WordView1: View{
     var word: String
     var meaning: String
-    
+
     var body: some View {
         VStack {
             HStack {
@@ -116,7 +118,7 @@ struct WordView1: View{
                 Text(meaning.uppercased())
                     .font(.title3)
                     .foregroundColor(.secondary)
-                
+
                 Spacer()
                 //for Favorites
                 StarButton()

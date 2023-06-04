@@ -30,6 +30,8 @@
 		7062ECB429F56DB300C3A0E0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7062ECB329F56DB300C3A0E0 /* Constants.swift */; };
 		70CD8C2529F7F7A900FB6136 /* LounchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CD8C2429F7F7A900FB6136 /* LounchScreen.swift */; };
 		70CD8C2729F7F7E700FB6136 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CD8C2629F7F7E700FB6136 /* HomeView.swift */; };
+		70E942442A2CA0AB005FC17A /* OpenAISwift in Frameworks */ = {isa = PBXBuildFile; productRef = 70E942432A2CA0AB005FC17A /* OpenAISwift */; };
+		70E942472A2CA16D005FC17A /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E942462A2CA16D005FC17A /* AppModel.swift */; };
 		7DCF45502A14FC6D0050A0E8 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 7DCF454F2A14FC6D0050A0E8 /* FSCalendar */; };
 		7DCF45522A14FFFA0050A0E8 /* CalendarModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCF45512A14FFFA0050A0E8 /* CalendarModule.swift */; };
 		7DCF45542A1504AF0050A0E8 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCF45532A1504AF0050A0E8 /* CalendarView.swift */; };
@@ -78,6 +80,7 @@
 		7062ECB329F56DB300C3A0E0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		70CD8C2429F7F7A900FB6136 /* LounchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LounchScreen.swift; sourceTree = "<group>"; };
 		70CD8C2629F7F7E700FB6136 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		70E942462A2CA16D005FC17A /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
 		7DCF45512A14FFFA0050A0E8 /* CalendarModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarModule.swift; sourceTree = "<group>"; };
 		7DCF45532A1504AF0050A0E8 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -88,6 +91,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7062ECB229F56B3700C3A0E0 /* Alamofire in Frameworks */,
+				70E942442A2CA0AB005FC17A /* OpenAISwift in Frameworks */,
 				7DCF45502A14FC6D0050A0E8 /* FSCalendar in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -132,6 +136,7 @@
 		7062EC8129F563E900C3A0E0 /* chatgpt_v2 */ = {
 			isa = PBXGroup;
 			children = (
+				70E942452A2CA0F4005FC17A /* Model */,
 				49A658AE2A0DEAB700F3863F /* WordTestView.swift */,
 				49A658A02A0DEA0800F3863F /* Diary.swift */,
 				49A658A12A0DEA0800F3863F /* DiaryChatModel.swift */,
@@ -145,8 +150,6 @@
 				70CD8C2429F7F7A900FB6136 /* LounchScreen.swift */,
 				70CD8C2629F7F7E700FB6136 /* HomeView.swift */,
 				7062EC8429F563E900C3A0E0 /* ChatView.swift */,
-				7062ECAC29F5692800C3A0E0 /* ChatViewModel.swift */,
-				7062ECAE29F56ADC00C3A0E0 /* OpenAIService.swift */,
 				7062ECB329F56DB300C3A0E0 /* Constants.swift */,
 				7DCF45512A14FFFA0050A0E8 /* CalendarModule.swift */,
 				7DCF45532A1504AF0050A0E8 /* CalendarView.swift */,
@@ -182,6 +185,16 @@
 			path = chatgpt_v2UITests;
 			sourceTree = "<group>";
 		};
+		70E942452A2CA0F4005FC17A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7062ECAE29F56ADC00C3A0E0 /* OpenAIService.swift */,
+				7062ECAC29F5692800C3A0E0 /* ChatViewModel.swift */,
+				70E942462A2CA16D005FC17A /* AppModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -201,6 +214,7 @@
 			packageProductDependencies = (
 				7062ECB129F56B3700C3A0E0 /* Alamofire */,
 				7DCF454F2A14FC6D0050A0E8 /* FSCalendar */,
+				70E942432A2CA0AB005FC17A /* OpenAISwift */,
 			);
 			productName = chatgpt_v2;
 			productReference = 7062EC7F29F563E900C3A0E0 /* chatgpt_v2.app */;
@@ -277,6 +291,7 @@
 			packageReferences = (
 				7062ECB029F56B3700C3A0E0 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				7DCF454E2A14FC6D0050A0E8 /* XCRemoteSwiftPackageReference "FSCalendar" */,
+				70E942422A2CA0AB005FC17A /* XCRemoteSwiftPackageReference "OpenAISwift" */,
 			);
 			productRefGroup = 7062EC8029F563E900C3A0E0 /* Products */;
 			projectDirPath = "";
@@ -323,6 +338,7 @@
 				7062ECB429F56DB300C3A0E0 /* Constants.swift in Sources */,
 				49A658A82A0DEA0800F3863F /* Diary.swift in Sources */,
 				70CD8C2729F7F7E700FB6136 /* HomeView.swift in Sources */,
+				70E942472A2CA16D005FC17A /* AppModel.swift in Sources */,
 				49A658A62A0DEA0800F3863F /* DiaryChatView.swift in Sources */,
 				49A658AF2A0DEAB700F3863F /* WordTestView.swift in Sources */,
 				49A658A92A0DEA0800F3863F /* DiaryChatModel.swift in Sources */,
@@ -673,6 +689,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		70E942422A2CA0AB005FC17A /* XCRemoteSwiftPackageReference "OpenAISwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/adamrushy/OpenAISwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		7DCF454E2A14FC6D0050A0E8 /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/WenchaoD/FSCalendar";
@@ -688,6 +712,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7062ECB029F56B3700C3A0E0 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		70E942432A2CA0AB005FC17A /* OpenAISwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 70E942422A2CA0AB005FC17A /* XCRemoteSwiftPackageReference "OpenAISwift" */;
+			productName = OpenAISwift;
 		};
 		7DCF454F2A14FC6D0050A0E8 /* FSCalendar */ = {
 			isa = XCSwiftPackageProductDependency;
